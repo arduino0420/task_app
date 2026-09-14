@@ -8,6 +8,11 @@ set :keep_releases, 5
 set :rbenv_ruby, "4.0.6"
 set :log_level, :info
 set :branch, "main"
+set :linked_files, %w{config/master.key .env}
+
+set :default_env, {
+  "TASK_APP_DATABASE_PASSWORD" => ENV["TASK_APP_DATABASE_PASSWORD"]
+}
 
 set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"
 set :puma_access_log, "#{shared_path}/log/puma_access.log"

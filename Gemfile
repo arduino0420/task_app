@@ -56,8 +56,13 @@ group :development, :test do
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
+  # Use console on exceptions pages
   gem "web-console"
+
+  gem "capistrano", "~> 3.17", require: false
+  gem "capistrano-rails", "~> 1.6", require: false
+  gem "capistrano-safe-deploy-to"
+  gem "capistrano3-puma", require: false
 end
 
 group :test do

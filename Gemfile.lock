@@ -77,6 +77,8 @@ GEM
       uri (>= 0.13.1)
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
+    airbrussh (1.6.2)
+      sshkit (>= 1.6.1, != 1.7.0)
     ast (2.4.3)
     base64 (0.3.0)
     bcrypt_pbkdf (1.1.2)
@@ -90,6 +92,22 @@ GEM
     bundler-audit (0.9.3)
       bundler (>= 1.2.0)
       thor (~> 1.0)
+    capistrano (3.20.1)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (2.2.0)
+      capistrano (~> 3.1)
+    capistrano-rails (1.7.0)
+      capistrano (~> 3.1)
+      capistrano-bundler (>= 1.1, < 3)
+    capistrano-safe-deploy-to (1.1.1)
+      capistrano (>= 3.0)
+    capistrano3-puma (8.1.0)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (>= 6.1, < 9.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -392,6 +410,10 @@ DEPENDENCIES
   bootsnap
   brakeman
   bundler-audit
+  capistrano (~> 3.17)
+  capistrano-rails (~> 1.6)
+  capistrano-safe-deploy-to
+  capistrano3-puma
   capybara
   debug
   image_processing (~> 1.2)
@@ -428,6 +450,7 @@ CHECKSUMS
   activestorage (8.1.3.1) sha256=f555254f387b1cffa499d2fd3115d12635eadc5b15206a8534316a67036163ef
   activesupport (8.1.3.1) sha256=85458765f25ea48b9019c46b6bb3fa5683197bf4280d9f06710a6e8d7a831376
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
+  airbrussh (1.6.2) sha256=3278655b2d957d774589a17e01496149288cbd8f1158b377581d82db006401cc
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bcrypt_pbkdf (1.1.2) sha256=c2414c23ce66869b3eb9f643d6a3374d8322dfb5078125c82792304c10b94cf6
@@ -438,6 +461,11 @@ CHECKSUMS
   builder (3.3.0) sha256=497918d2f9dca528fdca4b88d84e4ef4387256d984b8154e9d5d3fe5a9c8835f
   bundler (4.0.17) sha256=214e21431b5665dd2f99df8a5511c6b151d7a72e8015c8b38f8b775b61cbb6c1
   bundler-audit (0.9.3) sha256=81c8766c71e47d0d28a0f98c7eed028539f21a6ea3cd8f685eb6f42333c9b4e9
+  capistrano (3.20.1) sha256=b0d54ba5cf49bb194998bf6b427e889aa36ed05f545ecf7cc37acb9d529e9ae9
+  capistrano-bundler (2.2.0) sha256=47b4cf2ea17ea132bb0a5cabc5663443f5190a54f4da5b322d04e1558ff1468c
+  capistrano-rails (1.7.0) sha256=aca57455e8c5435785e0f938e16aa5b79c263694a755e1dca1c5d1743b40aae7
+  capistrano-safe-deploy-to (1.1.1) sha256=a01e818ae6fd4900a7d1f94485ab94b5e74124b6fb4ec5f35faaefc83e28f456
+  capistrano3-puma (8.1.0) sha256=280c5cb3ce412db47543d5811e198215cd9e5bf57d787f62ab9aec6fa0ba9c90
   capybara (3.40.0) sha256=42dba720578ea1ca65fd7a41d163dd368502c191804558f6e0f71b391054aeef
   concurrent-ruby (1.3.8) sha256=b2f1be836e968ccc78ccfce277ea79c72a88633f22306782c16ff23fb415d1e1
   connection_pool (3.0.2) sha256=33fff5ba71a12d2aa26cb72b1db8bba2a1a01823559fb01d29eb74c286e62e0a
